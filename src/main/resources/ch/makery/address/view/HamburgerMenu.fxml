@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ch.makery.address.controller.HamburgerMenuController"
+            pickOnBounds="false">
+
+    
+    <Button fx:id="hamburgerButton" onAction="#toggleMenu" mnemonicParsing="false"
+            styleClass="hamburger-button"
+            AnchorPane.topAnchor="15.0" AnchorPane.rightAnchor="15.0">
+        <graphic>
+            
+            <VBox alignment="CENTER" styleClass="hamburger-icon">
+                <children>
+                    
+                    <Region styleClass="hamburger-line"/>
+                    <Region styleClass="hamburger-line"/>
+                    <Region styleClass="hamburger-line"/>
+                </children>
+            </VBox>
+        </graphic>
+    </Button>
+
+    
+    <VBox fx:id="menuPane" alignment="TOP_RIGHT" managed="false" visible="false"
+          styleClass="menu-pane"
+          AnchorPane.topAnchor="75.0" AnchorPane.rightAnchor="0.0">
+        <children>
+            
+            <Button fx:id="dashboardButton" mnemonicParsing="false" styleClass="menu-item" text="Dashboard"/>
+
+            
+            <Button fx:id="homeButton" mnemonicParsing="false" styleClass="menu-item" text="Home"/>
+            <Button fx:id="requestButton" mnemonicParsing="false" styleClass="menu-item" text="Request Food"/>
+            <Button fx:id="donateButton" mnemonicParsing="false" styleClass="menu-item" text="Donate Food"/>
+            <Button fx:id="volunteerButton" mnemonicParsing="false" styleClass="menu-item" text="Volunteer"/>
+            <Button fx:id="approvalButton" mnemonicParsing="false" styleClass="menu-item" text="Approval Status"/>
+
+            
+            <Button fx:id="newAdminButton" mnemonicParsing="false" styleClass="menu-item" text="New Admin"/>
+            <Button fx:id="donationRequestButton" mnemonicParsing="false" styleClass="menu-item" text="Donation Requests"/>
+            <Button fx:id="volunteerRequestButton" mnemonicParsing="false" styleClass="menu-item" text="Volunteer Requests"/>
+
+            
+            <Button fx:id="loginButton" mnemonicParsing="false" styleClass="menu-item" text="Login"/>
+            <Button fx:id="logoutButton" mnemonicParsing="false" styleClass="menu-item" text="Logout"/>
+        </children>
+    </VBox>
+
+</AnchorPane>

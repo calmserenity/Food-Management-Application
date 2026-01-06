@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.UserStatusController" styleClass="food-bank-list-view">
+    <padding>
+        <Insets top="20.0" right="30.0" bottom="20.0" left="30.0" />
+    </padding>
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <ImageView onMouseClicked="#handleBackClick" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                <image><Image url="@/image/backarrow.png" /></image>
+            </ImageView>
+            <Label text="My Activity Status" styleClass="profile-title" />
+        </HBox>
+    </top>
+    <center>
+        <TabPane styleClass="themed-tab-pane" BorderPane.alignment="CENTER">
+            <BorderPane.margin><Insets top="20.0" /></BorderPane.margin>
+            <tabs>
+                
+                <Tab text="My Pledged Donations">
+                    <content>
+                        <TableView fx:id="donationsTableView" styleClass="themed-table-view">
+                            <columns>
+                                <TableColumn fx:id="donatedItemColumn" prefWidth="250.0" text="Item Pledged" />
+                                <TableColumn fx:id="donationDateColumn" prefWidth="150.0" text="Date" />
+                                <TableColumn fx:id="donationStatusColumn" prefWidth="150.0" text="Status" />
+                            </columns>
+                        </TableView>
+                    </content>
+                </Tab>
+                
+                <Tab text="My Food Requests">
+                    <content>
+                        <TableView fx:id="requestsTableView" styleClass="themed-table-view">
+                            <columns>
+                                <TableColumn fx:id="requestItemsColumn" prefWidth="300.0" text="Items Requested" />
+                                <TableColumn fx:id="requestDateColumn" prefWidth="150.0" text="Date" />
+                                <TableColumn fx:id="requestStatusColumn" prefWidth="150.0" text="Status" />
+                            </columns>
+                        </TableView>
+                    </content>
+                </Tab>
+                
+                <Tab text="My Volunteering">
+                    <content>
+                        <TableView fx:id="volunteeringTableView" styleClass="themed-table-view">
+                            <columns>
+                                <TableColumn fx:id="volunteerDateColumn" prefWidth="150.0" text="Date" />
+                                <TableColumn fx:id="volunteerTimeColumn" prefWidth="200.0" text="Time" />
+                                <TableColumn fx:id="volunteerStatusColumn" prefWidth="150.0" text="Status" />
+                            </columns>
+                        </TableView>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

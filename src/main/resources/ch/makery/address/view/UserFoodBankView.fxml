@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ch.makery.address.controller.UserFoodBankViewController"
+            styleClass="food-bank-list-view">
+    <padding>
+        <Insets top="20.0" right="30.0" bottom="20.0" left="30.0"/>
+    </padding>
+
+    
+    <top>
+        <HBox alignment="CENTER_LEFT" prefHeight="40.0" spacing="20.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="20.0"/>
+            </BorderPane.margin>
+            <children>
+                <ImageView onMouseClicked="#handleBackClick" fitHeight="30.0" fitWidth="30.0"
+                           pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                    <image>
+                        <Image url="@/image/backarrow.png"/>
+                    </image>
+                </ImageView>
+                <Label text="Find a Food Bank" styleClass="profile-title" />
+                <Region HBox.hgrow="ALWAYS"/>
+                
+                <TextField fx:id="searchField" promptText="Search by name or location..." styleClass="search-bar" prefWidth="300.0"/>
+            </children>
+        </HBox>
+    </top>
+
+    
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane" BorderPane.alignment="CENTER">
+            <content>
+                <VBox fx:id="foodBankListContainer" spacing="20.0">
+                    <padding>
+                        <Insets right="15.0"/>
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

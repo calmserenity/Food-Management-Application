@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<FlowPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="ch.makery.address.controller.AdminMainViewController"
+          hgap="40" vgap="40" alignment="TOP_CENTER" styleClass="food-bank-list-view">
+    <padding>
+        <Insets top="105.0" right="40.0" bottom="30.0" left="40.0"/>
+    </padding>
+    <children>
+        <StackPane onMouseClicked="#handleFoodBankListClick" styleClass="dashboard-button-card, card-foodbank-list">
+            <children>
+                <Label text="FoodBank List" styleClass="dashboard-card-text"/>
+            </children>
+        </StackPane>
+
+        <StackPane onMouseClicked="#handleDonationRequestClick" styleClass="dashboard-button-card, card-donations">
+            <children>
+                <Label text="Donation Requests" styleClass="dashboard-card-text"/>
+            </children>
+        </StackPane>
+
+        <StackPane onMouseClicked="#handleVolunteerRequestClick" styleClass="dashboard-button-card, card-volunteers">
+            <children>
+                <Label text="Volunteer Requests" styleClass="dashboard-card-text"/>
+            </children>
+        </StackPane>
+    </children>
+</FlowPane>

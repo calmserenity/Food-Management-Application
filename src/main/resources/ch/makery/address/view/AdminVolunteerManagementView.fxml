@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.controller.AdminVolunteerManagementController" styleClass="food-bank-list-view">
+    <padding>
+        <Insets top="20.0" right="30.0" bottom="20.0" left="30.0" />
+    </padding>
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <ImageView onMouseClicked="#handleBackClick" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                <image><Image url="@/image/backarrow.png" /></image>
+            </ImageView>
+            <Label fx:id="titleLabel" styleClass="profile-title" text="Volunteer Schedule" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ComboBox fx:id="foodBankComboBox" prefWidth="250.0" promptText="Select a Food Bank" />
+        </HBox>
+    </top>
+    <center>
+        <VBox spacing="30.0">
+            <BorderPane.margin><Insets top="20.0" /></BorderPane.margin>
+            <children>
+                
+                <VBox spacing="10.0">
+                    <Label text="Pending Volunteer Sign-ups" styleClass="profile-title" style="-fx-font-size: 20px;" />
+                    <TableView fx:id="pendingTableView" prefHeight="200.0" styleClass="themed-table-view">
+                        <columns>
+                            <TableColumn fx:id="pendingNameColumn" prefWidth="200.0" text="Volunteer Name" />
+                            <TableColumn fx:id="pendingDateColumn" prefWidth="150.0" text="Date" />
+                            <TableColumn fx:id="pendingTimeColumn" prefWidth="150.0" text="Time" />
+                            <TableColumn fx:id="pendingActionsColumn" prefWidth="180.0" text="Actions" />
+                        </columns>
+                    </TableView>
+                </VBox>
+                
+                <VBox spacing="10.0">
+                    <Label text="Confirmed Schedule" styleClass="profile-title" style="-fx-font-size: 20px;" />
+                    <TableView fx:id="confirmedTableView" prefHeight="200.0" styleClass="themed-table-view">
+                        <columns>
+                            <TableColumn fx:id="confirmedNameColumn" prefWidth="200.0" text="Volunteer Name" />
+                            <TableColumn fx:id="confirmedDateColumn" prefWidth="150.0" text="Date" />
+                            <TableColumn fx:id="confirmedTimeColumn" prefWidth="150.0" text="Time" />
+                            <TableColumn fx:id="confirmedActivityColumn" prefWidth="200.0" text="Activity" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

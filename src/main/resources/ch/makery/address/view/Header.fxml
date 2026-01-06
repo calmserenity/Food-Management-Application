@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+
+<HBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ch.makery.address.controller.HeaderController"
+      alignment="CENTER_LEFT" prefHeight="75.0" spacing="15.0"
+      styleClass="header-bar">
+    <padding>
+        <Insets bottom="5.0" left="20.0" right="20.0" top="5.0"/>
+    </padding>
+    <children>
+        <ImageView fitHeight="60.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@/image/logo.png"/>
+            </image>
+        </ImageView>
+
+        <Region HBox.hgrow="ALWAYS"/>
+
+        <StackPane onMouseClicked="#handleProfileClick" style="-fx-cursor: hand;">
+            <children>
+                <ImageView fx:id="userProfileImageView" fitHeight="45.0" fitWidth="45.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@/image/defaulticon.png"/>
+                    </image>
+                    <clip>
+                        <Circle radius="22.5" centerX="22.5" centerY="22.5"/>
+                    </clip>
+                </ImageView>
+            </children>
+        </StackPane>
+
+        <Region prefWidth="75.0"/>
+    </children>
+</HBox>

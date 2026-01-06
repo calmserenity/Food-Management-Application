@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ch.makery.address.controller.UserRequestDonationController"
+      alignment="CENTER" spacing="20.0" styleClass="login-vbox">
+    <children>
+        <VBox alignment="CENTER" spacing="15.0" maxWidth="600.0" styleClass="login-form-container">
+            <padding>
+                <Insets top="30.0" right="40.0" bottom="30.0" left="40.0" />
+            </padding>
+            <children>
+                <Label text="Request a Donation" styleClass="login-title">
+                    <font><Font name="System Bold" size="28.0" /></font>
+                </Label>
+
+                
+                <ComboBox fx:id="foodBankComboBox" prefWidth="400.0" promptText="Select Food Bank" />
+
+                
+                <Label text="Select Food Items You Wish to Request" style="-fx-font-weight: bold; -fx-padding: 10px 0 0 0;"/>
+                <TableView fx:id="foodItemTableView" prefHeight="200.0" prefWidth="400.0" disable="true">
+                    <columns>
+                        <TableColumn fx:id="itemNameColumn" prefWidth="250.0" text="Available Food Item" />
+                        <TableColumn fx:id="quantityColumn" prefWidth="150.0" text="Quantity to Request" />
+                    </columns>
+                </TableView>
+
+                
+                <TextField fx:id="fullNameField" alignment="CENTER" promptText="Full Name" prefWidth="400.0" maxWidth="400.0" />
+                <HBox alignment="CENTER" spacing="15.0" maxWidth="400.0">
+                    <TextField fx:id="ageField" alignment="CENTER" promptText="Age" prefWidth="100.0" />
+                    <ComboBox fx:id="genderComboBox" prefWidth="285.0" promptText="Gender (Optional)">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Male" />
+                                <String fx:value="Female" />
+                                <String fx:value="Other" />
+                                <String fx:value="Prefer not to say" />
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </HBox>
+
+                
+                <HBox alignment="CENTER" spacing="20.0">
+                    <VBox.margin><Insets top="10.0" /></VBox.margin>
+                    <children>
+                        <Label text="Method:" style="-fx-font-weight: bold;" />
+                        <RadioButton fx:id="pickUpRadio" mnemonicParsing="false" text="I will Pick-up">
+                            <toggleGroup><ToggleGroup fx:id="deliveryToggleGroup" /></toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="deliveryRadio" mnemonicParsing="false" text="Request Delivery" toggleGroup="$deliveryToggleGroup" />
+                    </children>
+                </HBox>
+
+                
+                <TextArea fx:id="notesArea" promptText="Additional Notes (optional)" prefHeight="80.0" prefWidth="400.0" wrapText="true" />
+
+                
+                <HBox alignment="CENTER" spacing="15.0" maxWidth="400.0">
+                    <VBox.margin><Insets top="10.0" /></VBox.margin>
+                    <children>
+                        <Button onAction="#handleSubmit" mnemonicParsing="false" text="Submit Request" HBox.hgrow="ALWAYS" styleClass="login-button" />
+                        <Button onAction="#handleCancel" mnemonicParsing="false" text="Cancel" HBox.hgrow="ALWAYS" styleClass="cancel-button" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

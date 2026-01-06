@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ch.makery.address.controller.UserMainViewController"
+      alignment="CENTER"
+      spacing="20.0"
+      styleClass="hero-section">
+    <children>
+        
+        <Label text="We do not discriminate" styleClass="hero-title"/>
+
+        
+        <Hyperlink fx:id="foodBankLink" text="Check out our list of foodbanks!" styleClass="hero-subtitle"/>
+    </children>
+</VBox>

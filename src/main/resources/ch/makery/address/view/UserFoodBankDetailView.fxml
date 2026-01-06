@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Accordion?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ch.makery.address.controller.UserFoodBankDetailController"
+            styleClass="food-bank-list-view">
+    <padding>
+        <Insets top="20.0" right="30.0" bottom="20.0" left="30.0"/>
+    </padding>
+
+    <top>
+        
+        <HBox alignment="CENTER_LEFT" spacing="20.0">
+            <ImageView onMouseClicked="#handleBackClick" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                <image><Image url="@/image/backarrow.png"/></image>
+            </ImageView>
+            <Label fx:id="foodBankNameTitle" styleClass="profile-title" text="[Food Bank Name]"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="scroll-pane">
+            <content>
+                <VBox spacing="30.0" maxWidth="800.0">
+                    <padding>
+                        <Insets top="20.0"/>
+                    </padding>
+                    <children>
+                        
+                        <ImageView fx:id="foodBankImageView" fitHeight="250.0" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 5);"/>
+                        <HBox alignment="CENTER_LEFT" spacing="15.0">
+                            <VBox.margin><Insets top="10.0"/></VBox.margin>
+                            <children>
+                                <Button fx:id="volunteerButton" onAction="#handleVolunteer" mnemonicParsing="false" text="Volunteer" styleClass="action-button"/>
+                                <Button fx:id="donateButton" onAction="#handleDonate" mnemonicParsing="false" text="Donate" styleClass="action-button"/>
+                                <Button fx:id="requestButton" onAction="#handleRequest" mnemonicParsing="false" text="Request Donation" styleClass="action-button"/>
+                            </children>
+                        </HBox>
+                        <GridPane hgap="15.0" vgap="10.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="NEVER" minWidth="10.0" prefWidth="150.0" />
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" /><RowConstraints minHeight="10.0" /><RowConstraints minHeight="10.0" /><RowConstraints minHeight="10.0" /><RowConstraints minHeight="10.0" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Location:" styleClass="card-label" GridPane.rowIndex="0"/><Label fx:id="locationLabel" styleClass="card-data" wrapText="true" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                                <Label text="Operating Hours:" styleClass="card-label" GridPane.rowIndex="1"/><Label fx:id="hoursLabel" styleClass="card-data" wrapText="true" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <Label text="Contact Person:" styleClass="card-label" GridPane.rowIndex="2"/><Label fx:id="picLabel" styleClass="card-data" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <Label text="Phone:" styleClass="card-label" GridPane.rowIndex="3"/><Label fx:id="phoneLabel" styleClass="card-data" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <Label text="Email:" styleClass="card-label" GridPane.rowIndex="4"/><Label fx:id="emailLabel" styleClass="card-data" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                            </children>
+                        </GridPane>
+                        <VBox spacing="10.0">
+                            <Label text="Current Needs:" styleClass="profile-title" style="-fx-font-size: 20px;"/>
+                            <Label fx:id="needsLabel" styleClass="card-data" wrapText="true" text="No specific needs listed at this time."/>
+                        </VBox>
+
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label text="Available Food:" styleClass="profile-title" style="-fx-font-size: 20px;" />
+                                <Accordion fx:id="foodAccordion" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
